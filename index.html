@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Creative coding</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    Teste ttete
+
+    <section id="s1">
+        <div class="square blue"></div>
+        <div class="square red"></div>
+        <div class="square gray"></div>
+        <div class="square black"></div>
+    </section>
+
+    <section id="s2">
+        <div class="div1"><img class="drag" src="./image/img_1.png" alt=""></div>
+        <div class="div2"><img class="drag" src="./image/img_2.png" alt=""></div>
+        <div class="div3"><img class="drag" src="./image/img_3.png" alt=""></div>
+        <div class="div4"><img class="drag" src="./image/img_4.png" alt=""></div>
+        <div class="div5"><img class="drag" src="./image/img_5.png" alt=""></div>
+        <div class="div6"><img class="drag" src="./image/img_6.png" alt=""></div>
+        <div class="div7"><img class="drag" src="./image/img_7.png" alt=""></div>
+        <div class="div8"><img class="drag" src="./image/img_8.png" alt=""></div>
+        <div class="div9"><img class="drag" src="./image/img_9.png" alt=""></div>
+    </section>
+
+    <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
+
+    <script>
+        var draggableElems = document.querySelectorAll('.square');
+        var draggies = []
+        // init Draggabillies
+        for ( var i=0; i < draggableElems.length; i++ ) {
+        var draggableElem = draggableElems[i];
+        var draggie = new Draggabilly( draggableElem, {
+            containment: '#s1'
+        });
+        draggies.push( draggie );
+        }
+
+        var draggableElems = document.querySelectorAll('.drag');
+        var draggies = []
+        // init Draggabillies
+        for ( var i=0; i < draggableElems.length; i++ ) {
+        var draggableElem = draggableElems[i];
+        var draggie = new Draggabilly( draggableElem, {
+            containment: '#s2'
+        });
+        draggies.push( draggie );
+        }
+
+    </script>
+
 </body>
 </html>
